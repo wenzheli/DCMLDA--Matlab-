@@ -4,7 +4,7 @@ DCMLDA--Matlab-
 ## Introduction
 DCMLDA is an extension of LDA model that used for capturing word burstiness, which means if a term is used once
 in a document, then it is likely to be used again. There is classifical topic model like LDA, does not capture burstiness, 
-while DCMLDA is specifically designed for capturing this phenomena. The implementation is based on Java, and should
+while DCMLDA is specifically designed for capturing this phenomena. The implementation is based on Matlab, and should
 work for any text corpus with very minimal modification (i.e text processing for your own corpus). 
 
 
@@ -37,20 +37,16 @@ All the technical details (derivations, etc) are included in the technical repor
 ## Quick Start
 ### Install the package 
 ``` 
-git clone git@github.com:wenzheli/DCMLDA--Java-.git
+git clone git@github.com:wenzheli/DCMLDA--Matlab-.git
 ```
 ### Try example: analyzing NIPS corpus
-Run DCMLDAInference.java, no need to provide any arguments. 
-### Try modifying the input parameters. 
-- -nTopics: number of topics
-- -alpha: default value for alpha prior
-- -beta: default value for beta prior
-- -burnin: number of iterations before sampling starts
-- -samples: number of samples for estimating parameters
-- -sampleWait: number of iterations for each sampling period
-- -tWords: number of top words for each topic
-- -file: input data file
-
+Run main.m, it is runnable without passing any arguments.  
+### Calling functions with some chosen input parameters. 
+``` 
+// corpus: nips, number of topics: 20, burn-in period: 100
+// samples: 10, and samplewait = 5;
+[master,alphas,betas]=dcmlda(nips,20,100,10,5);
+``` 
 ## Implementation
 
 ### Parse the text and pre-processing
